@@ -1,14 +1,14 @@
 hash_table = [[] for _ in range(10)]
 print (hash_table)
 def hashing_func(key):
-    return key % len(hash_table)
+    return hash(key) % len(hash_table)
 
 def insert(hash_table, key, value):
     hash_key = hashing_func(key)
     key_exists = False
     bucket = hash_table[hash_key]    
-    for i, kv in enumerate(bucket):
-        k, v = kv
+    for i, record in enumerate(bucket):
+        k, v = record
         if key == k:
             key_exists = True 
             break
@@ -20,8 +20,8 @@ def delete(hash_table, key):
     hash_key = hash(key) % len(hash_table)    
     key_exists = False
     bucket = hash_table[hash_key]
-    for i, kv in enumerate(bucket):
-        k, v = kv 
+    for i, record in enumerate(bucket):
+        k, v = record 
         if key == k:
             key_exists = True
             print(k, v) 
@@ -41,7 +41,7 @@ print (hash_table)
 def search(hash_table, key):
     hash_key = hash(key) % len(hash_table)    
     bucket = hash_table[hash_key]
-    for i, kv in enumerate(bucket):
-        k, v = kv
+    for i, record in enumerate(bucket):
+        k, v = record
         if key == k:
             return v
