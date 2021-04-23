@@ -38,3 +38,10 @@ insert(hash_table, 20, 'Zero')
 print (hash_table)
 delete(hash_table, 10)
 print (hash_table)
+def search(hash_table, key):
+    hash_key = hash(key) % len(hash_table)    
+    bucket = hash_table[hash_key]
+    for i, kv in enumerate(bucket):
+        k, v = kv
+        if key == k:
+            return v
