@@ -6,7 +6,9 @@ CREATE TABLE PERSON(
 INSERT INTO PERSON(id, Name, Age)
 VALUES ('1', 'Tom B. Erichsen', '20');
 INSERT INTO PERSON(id, Name, Age)
-VALUES ('2', 'Tom B. Erichsen', '20');
+VALUES ('2', 'Tom jerry', '17');
+INSERT INTO PERSON(id, Name, Age)
+VALUES ('3', 'Tom ', '10');
 select * from PERSON
 /* 1. Tạo 1 view  trong sql server ( gọi ra nhiều trường(> 2)) */
 
