@@ -16,6 +16,7 @@ CREATE VIEW [Profiles] AS
 SELECT Name, Age
 FROM Person
 WHERE id < 3;
+select * from Profiles
 /* 2. Tạo 1 table function trong sql server (tra ra view vừa tạo) */			
 CREATE FUNCTION udfProfiles (
     @id INT
@@ -30,7 +31,6 @@ RETURN
         PERSON
     WHERE
         id < @id;
-
 
 select * from udfProfiles(3)
 /* 3. Tạo 1 store proseduce có gọi table function trong sql server */ 			
